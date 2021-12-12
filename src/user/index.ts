@@ -5,7 +5,7 @@ import { Manager, SearchResult } from 'onecore';
 import { User, UserFilter, userModel, UserRepository, UserService } from './user';
 export * from './user';
 
-export class MongoUserRepository extends Repository<User, string> {
+export class MongoUserRepository extends Repository<User, string> implements UserRepository {
   constructor(db: Db) {
     super(db, 'users', userModel.attributes);
   }
