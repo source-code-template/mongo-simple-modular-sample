@@ -1,49 +1,39 @@
-import { DateRange, Filter, Model, Repository, ResultInfo, Service } from 'onecore';
+import { Attributes, DateRange, Filter, Repository, Service } from 'onecore';
 
 export interface UserFilter extends Filter {
-  id: string;
-  username: string;
+  id?: string;
+  username?: string;
   email?: string;
   phone?: string;
-  dateOfBirth?: Date|DateRange;
+  dateOfBirth?: Date | DateRange;
 }
 export interface User {
-  id: string;
-  username: string;
+  id?: string;
+  username?: string;
   email?: string;
   phone?: string;
-  dateOfBirth?: Date;
-}
-export interface UserService extends Service<User, string, number | ResultInfo<User>, UserFilter> {
+  dateOfBirth?: string;
 }
 export interface UserRepository extends Repository<User, string> {
 }
+export interface UserService extends Service<User, string, UserFilter> {
+}
 
-export const userModel: Model = {
-  name: 'user',
-  source: 'users',
-  attributes: {
-    id: {
-      key: true,
-      length: 40
-    },
-    username: {
-      required: true,
-      length: 255
-    },
-    email: {
-      format: 'email',
-      required: true,
-      length: 120
-    },
-    phone: {
-      format: 'phone',
-      required: true,
-      length: 14
-    },
-    dateOfBirth: {
-      column: 'date_of_birth',
-      type: 'datetime'
-    }
-  }
+export const userModel: Attributes = {
+  id: {
+    key: true,
+    length: 40,
+  },
+  username: {
+    length: 120,
+  },
+  email: {
+    length: 120,
+  },
+  phone: {
+    length: 45,
+  },
+  dateOfBirth: {
+    column: 'date_of_birth',
+  },
 };
