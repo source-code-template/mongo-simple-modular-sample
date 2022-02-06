@@ -1,6 +1,12 @@
 export const config = {
   port: 8080,
   secure: false,
+  allow: {
+    origin: '*',
+    credentials: 'true',
+    methods: 'GET,PUT,POST,DELETE,OPTIONS,PATCH',
+    headers: '*'
+  },
   log: {
     level: 'info',
     map: {

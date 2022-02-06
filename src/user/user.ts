@@ -35,5 +35,6 @@ export const userModel: Attributes = {
   },
   dateOfBirth: {
     column: 'date_of_birth',
+    type: 'datetime'
   },
 };
