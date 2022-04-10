@@ -1,6 +1,5 @@
 export const config = {
   port: 8080,
-  secure: false,
   allow: {
     origin: '*',
     credentials: 'true',
@@ -16,7 +15,7 @@ export const config = {
   },
   middleware: {
     log: true,
-    skips: 'health,log',
+    skips: 'health,log,middleware',
     request: 'request',
     response: 'response',
     status: 'status',

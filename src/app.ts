@@ -12,10 +12,10 @@ import { route } from './route';
 dotenv.config();
 const conf = merge(config, process.env, env, process.env.ENV);
 
+const app = express();
 const logger = createLogger(conf.log);
 const middleware = new MiddlewareLogger(logger.info, conf.middleware);
-const app = express();
-app.use(allow(conf.allow), json());
+app.use(allow(conf.allow), json(), middleware.log);
 
 connectToDb(`${conf.mongo.uri}`, `${conf.mongo.db}`).then(db => {
   const ctx = useContext(db, logger, middleware);
@@ -23,4 +23,4 @@ connectToDb(`${conf.mongo.uri}`, `${conf.mongo.db}`).then(db => {
   http.createServer(app).listen(conf.port, () => {
     console.log('Start mongo server at port ' + conf.port);
   });
-});
+}).catch(err => console.log('Cannot connect to mongo: ' + err));
