@@ -7,7 +7,7 @@ export * from './user';
 
 export class MongoUserRepository extends Repository<User, string> implements UserRepository {
   constructor(db: Db) {
-    super(db, 'user', userModel);
+    super(db, 'users', userModel);
   }
 }
 export class UserManager extends Manager<User, string, UserFilter> implements UserService {
