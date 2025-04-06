@@ -1,5 +1,43 @@
 # simple-mongo-rest-api-ts
 
+## Available Scripts
+
+### `npm start`
+
+Runs the app in the development mode.
+
+### `npm run build`
+
+Builds the app for production to the `dist` folder.
+
+### `npm run prod`
+
+Runs the app for production in the `dist` folder.
+
+### Build the Docker Image
+```shell
+docker build -t mongo-simple-modular-sample .
+```
+
+### Test the Docker Image
+```shell
+docker run -p 8080:8080 mongo-simple-modular-sample
+```
+
+```shell
+docker run -p 8080:8080 -e MONGODB_URI="mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net" mongo-simple-modular-sample
+```
+### Deploy to Cloud Run
+```shell
+gcloud run deploy mongo-simple-service \
+--image us-central1-docker.pkg.dev/<your-project-id>/node-repo/mongo-simple-modular-sample \
+--platform managed \
+--region us-central1 \
+--allow-unauthenticated \
+--port 8080 \
+--set-env-vars MONGODB_URI="mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net"
+```
+
 ## Architecture
 
 ### Architecture
