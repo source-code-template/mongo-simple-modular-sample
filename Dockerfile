@@ -4,11 +4,13 @@ FROM node:18-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
+COPY dist/app.js ./
+
 # Copy package.json and package-lock.json (or yarn.lock)
 COPY package*.json ./
 
 # Install application dependencies
-RUN npm install
+# RUN npm install
 
 # Copy the rest of the application code
 COPY . .
