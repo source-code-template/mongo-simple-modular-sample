@@ -9,8 +9,8 @@ export const config = {
   log: {
     level: "info",
     map: {
-      time: "@timestamp",
-      msg: "message",
+      time: "time",
+      msg: "msg",
     },
   },
   middleware: {

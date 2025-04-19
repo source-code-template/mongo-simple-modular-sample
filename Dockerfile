@@ -4,7 +4,7 @@ FROM node:18-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-COPY app.js ./
+COPY dist ./
 
 # Copy package.json and package-lock.json (or yarn.lock)
 COPY package*.json ./
