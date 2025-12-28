@@ -1,8 +1,9 @@
-import { Controller } from "express-ext"
 import { Db } from "mongodb"
 import { buildQuery, Repository, SearchBuilder } from "mongodb-extension"
 import { Log, Search, UseCase } from "onecore"
+import { UserController } from "./controller"
 import { User, UserFilter, userModel, UserRepository, UserService } from "./user"
+export * from "./controller"
 export * from "./user"
 
 export class MongoUserRepository extends Repository<User, string> implements UserRepository {
@@ -15,15 +16,10 @@ export class UserUseCase extends UseCase<User, string, UserFilter> implements Us
     super(search, repository)
   }
 }
-export class UserController extends Controller<User, string, UserFilter> {
-  constructor(log: Log, service: UserService) {
-    super(log, service)
-  }
-}
 
-export function useUserController(log: Log, db: Db): UserController {
+export function useUserController(db: Db, log: Log): UserController {
   const builder = new SearchBuilder<User, UserFilter>(db, "user", buildQuery, userModel)
   const repository = new MongoUserRepository(db)
   const service = new UserUseCase(builder.search, repository)
-  return new UserController(log, service)
+  return new UserController(service, log)
 }

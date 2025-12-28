@@ -19,7 +19,7 @@ export function useContext(db: Db, logger: Logger, midLogger: Middleware): Appli
   const mongoChecker = new MongoChecker(db)
   const health = new HealthController([mongoChecker])
 
-  const user = useUserController(logger.error, db)
+  const user = useUserController(db, logger.error)
 
   return { health, log, middleware, user }
 }

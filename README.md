@@ -27,7 +27,7 @@ docker run -p 8080:8080 mongo-simple-modular-sample
 ```
 
 ```shell
-docker run -p 8080:8080 -e MONGODB_URI="mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net" mongo-simple-modular-sample
+docker run -p 8080:8080 -e MONGO_URI="mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net" -e MONGO_DB="masterdata" mongo-simple-modular-sample
 ```
 
 ### Deploy to Cloud Run
@@ -39,7 +39,7 @@ gcloud run deploy mongo-simple-service \
 --region us-central1 \
 --allow-unauthenticated \
 --port 8080 \
---set-env-vars MONGODB_URI="mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net"
+--set-env-vars MONGO_URI="mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net"
 ```
 
 ## Architecture
