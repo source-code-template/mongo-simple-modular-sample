@@ -16,7 +16,7 @@ export class UserController {
   }
   search(req: Request, res: Response) {
     const filter = fromRequest<UserFilter>(req, ["status", "fields"])
-    format(filter, ["dateOfBirth"])
+    format(filter, ["dateOfBirth"], ["page", "limit"])
     const page = queryPage(req, filter)
     const limit = queryLimit(req)
     this.service

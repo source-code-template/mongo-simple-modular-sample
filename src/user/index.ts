@@ -1,12 +1,12 @@
 import { Db } from "mongodb"
-import { MongoRepository } from "mongodb-extension"
+import { Repository } from "mongodb-extension"
 import { Log, UseCase } from "onecore"
 import { UserController } from "./controller"
 import { User, UserFilter, userModel, UserRepository, UserService } from "./user"
 export * from "./controller"
 export * from "./user"
 
-export class MongoUserRepository extends MongoRepository<User, string, UserFilter> implements UserRepository {
+export class MongoUserRepository extends Repository<User, string, UserFilter> implements UserRepository {
   constructor(db: Db) {
     super(db, "users", userModel)
   }

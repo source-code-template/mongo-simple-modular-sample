@@ -22,8 +22,8 @@ export const config = {
     size: "size",
   },
   mongo: {
-    uri: "",
-    db: "",
+    uri: "mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net",
+    db: "masterdata",
   },
 }
 
