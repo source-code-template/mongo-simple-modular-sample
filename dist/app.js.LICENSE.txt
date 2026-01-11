@@ -51,13 +51,6 @@
  */
 
 /*!
- * destroy
- * Copyright(c) 2014 Jonathan Ong
- * Copyright(c) 2015-2022 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-/*!
  * ee-first
  * Copyright(c) 2014 Jonathan Ong
  * MIT Licensed
@@ -126,21 +119,7 @@
 
 /*!
  * media-typer
- * Copyright(c) 2014 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-/*!
- * merge-descriptors
- * Copyright(c) 2014 Jonathan Ong
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-/*!
- * methods
- * Copyright(c) 2013-2014 TJ Holowaychuk
- * Copyright(c) 2015-2016 Douglas Christopher Wilson
+ * Copyright(c) 2014-2017 Douglas Christopher Wilson
  * MIT Licensed
  */
 
@@ -201,6 +180,13 @@
  */
 
 /*!
+ * router
+ * Copyright(c) 2013 Roman Shtylman
+ * Copyright(c) 2014-2022 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+
+/*!
  * send
  * Copyright(c) 2012 TJ Holowaychuk
  * Copyright(c) 2014-2022 Douglas Christopher Wilson
@@ -246,5 +232,3 @@
  * Copyright(c) 2014-2017 Douglas Christopher Wilson
  * MIT Licensed
  */
-
-/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
